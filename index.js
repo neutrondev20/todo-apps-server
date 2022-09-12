@@ -1,6 +1,7 @@
 const express    = require("express");
 const bodyParser = require('body-parser')
 const https      = require('https');
+const http       = require('http');
 const fs         = require("fs");
 
 const app = express();
@@ -104,7 +105,7 @@ app.delete("/missions/:id", (req, res) => {
 //     console.log("Server run on port 5001");
 // })
 
-applisten(5001, () => {
+http.createServer(app).listen(5001, () => {
 
-    console.log("Server run on port 5001");
+        console.log("Server run on port 5001");
 })
